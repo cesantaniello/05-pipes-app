@@ -22,3 +22,37 @@
     <div class="stat-desc">{{fullName()}}</div>
   </div>
 </div>
+
+<div class="divider">
+  <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+    <div class="stat">
+      <div class="stat-title">Date Pipe</div>
+      <div class="stat-value">{{ customDate() | date }}</div>
+      <div class="stat-desc">{{customDate()}}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">Uppercase Pipe</div>
+      <div class="stat-value">{{ customDate() | date }}</div>
+      <div class="stat-desc">{{customDate()}}</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider">
+  <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+    <div class="stat">
+      <div class="stat-title">Date: 'dd/MM/yyyy'</div>
+      <div class="stat-value">{{ customDate() | date: "dd/MM/yyyy" }}</div>
+      <div class="stat-desc">{{customDate()}}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">Date | short</div>
+      <div class="stat-value">{{ customDate() | date: "short" }}</div>
+      <div class="stat-desc">{{customDate()}}</div>
+    </div>
+
+  </div>
+</div>
