@@ -12,9 +12,26 @@
 
   <app-card title="i18nPluralPipe">
     <p>{{ clients().length | i18nPlural:clientsMap }}</p>
-    <button [disabled]="clients().length === 0"
-      (click)="deleteClient()" class="btn btn-primary mb-2">
-        Eliminar cliente
-    </button>
+      <button [disabled]="clients().length === 0"
+        (click)="deleteClient()" class="btn btn-primary mb-2">
+          Eliminar cliente
+      </button>
+  </app-card>
+
+  <app-card title="slicePipe">
+    <b>Original</b>
+    <p class="text-primary">{{ clients().join(', ') }}</p>
+
+    <b class="mt-2">Slice:0:2</b>
+    <p class="text-primary">{{ (clients() | slice:0:2).join(', ') }}</p>
+
+    <b class="mt-2">Slice:2:4</b>
+    <p class="text-primary">{{ (clients() | slice:2:4).join(', ') }}</p>
+
+    <b class="mt-2">Slice:3</b>
+    <p class="text-primary">{{ (clients() | slice:3).join(', ') }}</p>
+
+    <b class="mt-2">Slice:-2</b>
+    <p class="text-primary">{{ (clients() | slice:-2).join(', ') }}</p>
   </app-card>
 </div>
