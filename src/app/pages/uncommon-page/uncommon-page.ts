@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Card } from "../../components/card/card";
 import { AsyncPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { interval, map, tap } from 'rxjs';
 
 const client1 = {
   name: 'Pedro',
@@ -58,5 +59,11 @@ export default class UncommonPage {
       setTimeout(() => {
         resolve('Valor resuelto después de 5 segundos');
       }, 5000);
-    });  ;
+    }
+  );
+
+  myObservableTimer = interval(2000).pipe(
+    map((value) => value + 1),
+    tap((value) => console.log('tap:', value)),
+  );
 }
