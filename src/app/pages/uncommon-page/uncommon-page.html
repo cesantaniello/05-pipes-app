@@ -9,4 +9,12 @@
       es un placer {{ client().gender |i18nSelect:invitationMap }} aquí</p>
     <button class="btn btn-primary" (click)="changeClient()">Cambiar cliente</button>
   </app-card>
+
+  <app-card title="i18nPluralPipe">
+    <p>{{ clients().length | i18nPlural:clientsMap }}</p>
+    <button [disabled]="clients().length === 0"
+      (click)="deleteClient()" class="btn btn-primary mb-2">
+        Eliminar cliente
+    </button>
+  </app-card>
 </div>
